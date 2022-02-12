@@ -1,8 +1,24 @@
 # Data modeling with Postgres
 The repository shows how to model user activity data to create a database and ETL pipeline in Postgres for a music streaming app. Fact and Dimension tables are defined and data are inserted into new tables.
 
+## Dependencies
 
-### Database Setup
+You will need to install all Python dependencies that are stored in the [requirements.txt](requirements.txt) file. 
+
+To install them, first open a terminal window in the folder of this repository and create & activate a virtual environment: 
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+Then install the dependencies from the [requirements.txt](requirements.txt) file:
+
+```bash
+pip install -r requirements.txt 
+```
+
+## Database Setup
 
 In this section, we describe how to start a PostgreSQL server. The instructions apply to Linux and the first step is to install PostgreSQL
 
