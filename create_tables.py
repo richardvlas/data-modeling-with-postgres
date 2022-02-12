@@ -7,9 +7,6 @@ def create_database():
     Create and connect to the sparkifydb and return the connection and 
     cursor to sparkifydb
 
-    Parameters
-    ----------
-
     Returns
     -------
     cur : psycopg2.extensions.cursor
@@ -70,6 +67,14 @@ def create_database():
 def drop_tables(cur, conn):
     """
     Drops each table using the queries in `drop_table_queries` list.
+    
+    Parameters
+    ----------
+    cur : psycopg2.extensions.cursor
+        a new cursor object to sparkifydb database
+
+    conn : psycopg2.extensions.connection
+        a new connection object to sparkifydb database   
     """
     for query in drop_table_queries:
         cur.execute(query)
@@ -79,6 +84,14 @@ def drop_tables(cur, conn):
 def create_tables(cur, conn):
     """
     Creates each table using the queries in `create_table_queries` list. 
+
+    Parameters
+    ----------
+    cur : psycopg2.extensions.cursor
+        a new cursor object to sparkifydb database
+
+    conn : psycopg2.extensions.connection
+        a new connection object to sparkifydb database   
     """
     for query in create_table_queries:
         cur.execute(query)
