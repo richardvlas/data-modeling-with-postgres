@@ -76,3 +76,5 @@ or use this one from the command line before loging into psql:
 createdb -U postgres studentdb
 ```
 
+## Data Modelling
+
