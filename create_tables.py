@@ -9,10 +9,10 @@ def create_database():
 
     Returns
     -------
-    cur : psycopg2.extensions.cursor
+    cur : psycopg2.cursor
         a new cursor object to sparkifydb database
 
-    conn : psycopg2.extensions.connection
+    conn : psycopg2.connection
         a new connection object to sparkifydb database   
     """
     # connect to default database
@@ -70,10 +70,10 @@ def drop_tables(cur, conn):
     
     Parameters
     ----------
-    cur : psycopg2.extensions.cursor
+    cur : psycopg2.cursor
         a new cursor object to sparkifydb database
 
-    conn : psycopg2.extensions.connection
+    conn : psycopg2.connection
         a new connection object to sparkifydb database   
     """
     for query in drop_table_queries:
@@ -87,10 +87,10 @@ def create_tables(cur, conn):
 
     Parameters
     ----------
-    cur : psycopg2.extensions.cursor
+    cur : psycopg2.cursor
         a new cursor object to sparkifydb database
 
-    conn : psycopg2.extensions.connection
+    conn : psycopg2.connection
         a new connection object to sparkifydb database   
     """
     for query in create_table_queries:
