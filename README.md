@@ -23,6 +23,24 @@ Then install the dependencies from the [requirements.txt](requirements.txt) file
 pip install -r requirements.txt 
 ```
 
+## Project Structure
+The project includes the following files and folders:
+
+```
+├── README.md
+├── create_tables.py
+├── etl.ipynb
+├── etl.py
+├── requirements.txt
+├── sql_queries.py
+├── sql_queries.py
+├── test.ipynb
+├── data
+│   ├── log_data
+│   └── song_data
+└── images
+```
+
 ## Project Datasets
 
 ### Song Dataset
