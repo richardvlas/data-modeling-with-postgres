@@ -38,7 +38,7 @@ The project includes the following files and folders:
 ├── data
 │   ├── log_data
 │   └── song_data
-└── images
+└── assets
 ```
 
 ## Project Datasets
@@ -132,4 +132,4 @@ createdb -U postgres studentdb
 
 ## Data Modelling
 
-
+<img src="./assets/database_schema.png">
