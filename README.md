@@ -6,23 +6,6 @@ They'd like a data engineer to create a Postgres database with tables designed t
 ## Project Description
 In this project, we will model data with Postgres and build an ETL pipeline using Python. We will need to define fact and dimension tables for a star schema for a particular analytic focus, and write an ETL pipeline that transfers data from files in two local directories into these tables in Postgres using Python and SQL.
 
-## Dependencies
-
-You will need to install all Python dependencies that are stored in the [requirements.txt](requirements.txt) file. 
-
-To install them, first open a terminal window in the folder of this repository and create & activate a virtual environment: 
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
-Then install the dependencies from the [requirements.txt](requirements.txt) file:
-
-```bash
-pip install -r requirements.txt 
-```
-
 ## Project Structure
 The project includes the following files and folders:
 
@@ -82,9 +65,30 @@ And below is an example of what the data snippet in a log file, 2018-11-12-event
 {"artist":null,"auth":"Logged In","firstName":"Maia","gender":"F","itemInSession":0,"lastName":"Burke","length":null,"level":"free","location":"Houston-The Woodlands-Sugar Land, TX","method":"GET","page":"Home","registration":1540676534796.0,"sessionId":510,"song":null,"status":200,"ts":1542071524796,"userAgent":"\"Mozilla\/5.0 (Windows NT 6.3; WOW64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/36.0.1985.143 Safari\/537.36\"","userId":"51"}
 ```
 
+## Data Modelling
 
+<img src="./assets/database_schema.png">
 
-## Database Setup
+## Getting Started
+
+### Dependencies
+
+You will need to install all Python dependencies that are stored in the [requirements.txt](requirements.txt) file. 
+
+To install them, first open a terminal window in the folder of this repository and create & activate a virtual environment: 
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+Then install the dependencies from the [requirements.txt](requirements.txt) file:
+
+```bash
+pip install -r requirements.txt 
+```
+
+### Database Setup
 
 In this section, we describe how to start a PostgreSQL server. The instructions apply to Linux and the first step is to install PostgreSQL
 
@@ -137,6 +141,21 @@ or use this one from the command line before loging into psql:
 createdb -U postgres studentdb
 ```
 
-## Data Modelling
+### Running the ETL Pipeline
 
-<img src="./assets/database_schema.png">
+1. In order to create the database tables run the following command in the terminal
+    ```bash
+    python create_tables.py
+    ```
+
+2. Loading, transforming and processing the raw datasets is done by running the next command:
+    ```bash
+    python etl.py
+    ```
+
+3. To test that the database tables are populated with the right data records, open `etl.ipynb ` in jupyter notebook as follows:
+    ```bash
+    jupyter notebook etl.ipynb 
+    ```
+
+If you would like to repeat the steps above, remember to run `create_tables.py` before running `etl.py` to reset your tables.
