@@ -33,13 +33,20 @@ The project includes the following files and folders:
 ├── etl.py
 ├── requirements.txt
 ├── sql_queries.py
-├── sql_queries.py
 ├── test.ipynb
 ├── data
 │   ├── log_data
 │   └── song_data
 └── assets
 ```
+
+- `README.md` - a markdown file giving an overview of the project and explaining the project structure
+- `create_tables.py` - drops and creates database tables specified below. We run this file to reset the tables before each time we run the ETL scripts.
+- `etl.ipynb` - reads and processes a single file from `song_data` and `log_data` and loads the data into the tables. This notebook contains detailed instructions on the ETL process for each of the tables.
+- `etl.py` - reads and processes files from `song_data` and `log_data` and loads them into your tables. This is build out based on the work in the ETL notebook.
+- `requirements.txt` - stores information about all the Python libraries, modules, and packages that are used in the  project. 
+- `sql_queries.py` - contains all your sql queries, and is imported into the last three files above.
+
 
 ## Project Datasets
 
